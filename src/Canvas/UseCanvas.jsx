@@ -3,6 +3,8 @@ import { addCTA, addText, addUserImage, drawBackground, drawMask, drawPattern, d
 
 const UseCanvas = (adText, CTA, hex, img, template) => {
     const ref = useRef();
+    if (adText === '') adText = template.caption.text;
+    if (CTA === '') CTA = template.cta.text;
 
     useEffect(() => {
         const userImg = img
@@ -10,24 +12,17 @@ const UseCanvas = (adText, CTA, hex, img, template) => {
         const ctx = canvas.getContext('2d');
         // Draw Background With HEX
         drawBackground(ctx, canvas, hex);
-
         // Draw Design pattern
-        if (adText === '') adText = template.caption.text;
-        if (CTA === '') CTA = template.cta.text;
-
         drawPattern(ctx, canvas, template);
         // Add Mask
-        drawMask(ctx, canvas, template)
+        drawMask(ctx, canvas, template);
+        
         addUserImage(ctx, template.image_mask, userImg, () => {
             drawStroke(ctx, canvas, template.urls.stroke);
             addText(ctx, template.caption, adText);
             addCTA(ctx, template.cta, template.caption, CTA)
-
         })
-
-
-
-    }, [adText, hex, CTA, img])
+    }, [adText, hex, CTA, img,template])
     return ref
 }
 

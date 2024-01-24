@@ -2,7 +2,6 @@ import './index.css'
 import Canvas from './Canvas/Canvas'
 import { useState } from 'react';
 import template from './template.json'
-import { IoAdd } from "react-icons/io5";
 import { header, uploadImage } from './functions';
 import ColorPicker from './components/ColorPicker';
 

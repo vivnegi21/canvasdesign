@@ -73,12 +73,11 @@ export function drawStroke(ctx, canvas,stroke) {
 export function addUserImage(ctx,image_mask,userImage,callback) {
     const userImg = new Image();
     userImg.src = userImage;
-    // set image to cover
+    // setting image to cover
     userImg.style.objectFit = "cover";
     userImg.onload = () => {
         ctx.drawImage(userImg, image_mask.x, image_mask.y, image_mask.width, image_mask.height);
         callback();
-
     }
 }
 
