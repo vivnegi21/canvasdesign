@@ -15,7 +15,6 @@ function App() {
   const [show, toggleShow] = useState(false);
   const [colorHistory, setColorHistory] = useState(['#fff', '#000']);
 
-
   function handleChange(e) {
     let uploadImage = e.target.files[0];
     if (!uploadImage) return;
