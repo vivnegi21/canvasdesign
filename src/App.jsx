@@ -12,7 +12,7 @@ function App() {
   const [CTA, setCTA] = useState('');
   const [file, setFile] = useState('https://fastly.picsum.photos/id/54/536/354.jpg?hmac=sMoYw3PiEjWwmO8yrArQS3zOwfWVklH03pnQppwqn2Y');
   const [show, toggleShow] = useState(false);
-  const [colorHistory, setColorHistory] = useState(['#fff', '#000']);
+  const [colorHistory, setColorHistory] = useState([]);
 
   function handleChange(e) {
     let uploadImage = e.target.files[0];
