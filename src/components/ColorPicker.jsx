@@ -8,7 +8,7 @@ const ColorPicker = ({colorHistory,setColorHistory,hex,setHex,show,toggleShow}) 
             <div className="flex gap-2 w-fit h-fit flex-wrap">
                 {colorHistory.length > 0 && colorHistory.map((color, idx) => {
                     return (
-                        <div key={idx} className={`w-8 h-8 rounded-full border cursor-pointer`} style={{
+                        <div key={idx} className='w-8 h-8 rounded-full border cursor-pointer duration-100 ease-in hover:scale-110' style={{
                             backgroundColor: color
                         }} onClick={() => setHex(color)}>
 
